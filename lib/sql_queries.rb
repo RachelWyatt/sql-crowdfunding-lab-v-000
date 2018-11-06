@@ -30,5 +30,9 @@ def selects_the_category_name_and_the_sum_total_of_the_all_its_pledges_for_the_b
 end
 
 def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_funding_goal
+<<<<<<< HEAD
 "SELECT projects.title, (SUM(pledges.amount) - projects.funding_goal) AS over_goal FROM projects INNER JOIN pledges ON projects.id = pledges.project_id GROUP BY projects.title HAVING over_goal >= 0;"
+=======
+"SELECT projects.title, SUM (pledges.amount) - projects.funding_goal FROM projects, pledges GROUP BY projects.title HAVING SUM (pledges.amount) > projects.funding_goal;"
+>>>>>>> 74684038732b8d5351fb2702e84de7be188382c5
 end
